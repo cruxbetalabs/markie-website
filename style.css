@@ -319,14 +319,14 @@ footer p {
 }
 
 footer a {
-    color: inherit;
+    color: #9f7e4b;
     text-decoration: none;
-    transition: text-decoration-color 0.2s;
+    transition: color 0.2s ease;
 }
 
 footer a:hover {
+    color: #b89968;
     text-decoration: underline;
-    text-decoration-color: #9f7e4b;
 }
 
 @media (max-width: 768px) {
@@ -394,4 +394,79 @@ footer a:hover {
     .feature-card {
         padding: 1.5em;
     }
+}
+
+/* Privacy Policy Styles */
+.policy-header {
+    text-align: center;
+    margin-bottom: 3em;
+    padding: 0 1em;
+}
+
+.policy-header h1 {
+    margin-bottom: 0.5em;
+}
+
+.last-updated {
+    font-size: 0.9em;
+    color: #57606a;
+    font-style: italic;
+    margin-top: 0.5em;
+}
+
+.policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.policy-section {
+    margin-bottom: 2.5em;
+}
+
+.policy-section h2 {
+    margin-bottom: 0.75em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid #e8dcc9;
+}
+
+.policy-section h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+}
+
+.policy-section ul {
+    margin: 1em 0 1em 1.5em;
+    line-height: 1.25;
+}
+
+.policy-section li {
+    margin-bottom: 0.5em;
+}
+
+.policy-section strong {
+    font-weight: 600;
+    color: #24292f;
+}
+
+.policy-section a {
+    color: #9f7e4b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.policy-section a:hover {
+    color: #b89968;
+    text-decoration: underline;
+}
+
+footer a {
+    color: #9f7e4b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #b89968;
+    text-decoration: underline;
 }
