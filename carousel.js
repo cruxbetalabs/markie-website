@@ -22,11 +22,11 @@ function updateCarousel() {
     // Calculate offset to center the current slide
     const container = document.querySelector('.carousel-container');
     const itemWidth = items[0].offsetWidth;
-    
+
     // Get the actual gap from computed styles
     const trackStyles = window.getComputedStyle(track);
     const gap = parseInt(trackStyles.gap) || 40;
-    
+
     const containerWidth = container.offsetWidth;
 
     // Calculate position to center the current item
@@ -98,7 +98,7 @@ track.addEventListener('touchend', (e) => {
 function handleSwipe() {
     const swipeThreshold = 50; // minimum distance for a swipe
     const diff = touchStartX - touchEndX;
-    
+
     if (Math.abs(diff) > swipeThreshold) {
         if (diff > 0) {
             // Swiped left, go to next
