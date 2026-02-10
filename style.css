@@ -360,29 +360,31 @@ footer a:hover {
     }
 
     .carousel {
-        padding: 0 50px;
-    }
-
-    .carousel-btn-prev {
-        left: 10px;
-    }
-
-    .carousel-btn-next {
-        right: 10px;
+        padding: 0 20px;
     }
 
     .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
+        display: none;
+    }
+
+    .carousel-container {
+        padding: 40px 0;
     }
 
     .carousel-item {
-        flex: 0 0 220px;
+        flex: 0 0 240px;
+    }
+
+    .carousel-item.center {
+        transform: scale(1.1);
     }
 
     .carousel-track {
-        gap: 15px;
+        gap: 20px;
+    }
+
+    .carousel-caption-container {
+        margin-top: 1.5em;
     }
 
     .features-section {

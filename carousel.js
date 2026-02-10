@@ -14,14 +14,19 @@ const captions = [
     '<strong>Your Spending Explained</strong> — Visual insights that make sense',
     '<strong>Your Spending Explained</strong> — Deeper analytics at a glance',
     '<strong>Edit Anything, Anytime</strong> — Full control over every detail',
-    '<strong>Talk. We Handle the Rest</strong> — Voice commands for hands-free editing'
+    '<strong>Talk. We Handle the Rest</strong> — Voice commands for hands-free editing',
+    '<strong>One Tap Away</strong> — Lock screen widget for instant access, no hunting'
 ];
 
 function updateCarousel() {
     // Calculate offset to center the current slide
     const container = document.querySelector('.carousel-container');
     const itemWidth = items[0].offsetWidth;
-    const gap = 40;
+    
+    // Get the actual gap from computed styles
+    const trackStyles = window.getComputedStyle(track);
+    const gap = parseInt(trackStyles.gap) || 40;
+    
     const containerWidth = container.offsetWidth;
 
     // Calculate position to center the current item
@@ -76,6 +81,37 @@ document.addEventListener('keydown', (e) => {
         nextSlide();
     }
 });
+
+// Touch/swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+track.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeThreshold = 50; // minimum distance for a swipe
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swiped left, go to next
+            nextSlide();
+        } else {
+            // Swiped right, go to previous
+            prevSlide();
+        }
+    }
+}
+
+// Handle window resize to recalculate carousel position
+window.addEventListener('resize', updateCarousel);
 
 // Initialize
 updateCarousel();
